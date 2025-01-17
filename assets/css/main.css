@@ -2269,11 +2269,7 @@ a:hover {
   height: 848px;
   left: -453px;
   top: -344px;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(188, 104, 26, 0.24)), to(rgba(188, 104, 26, 0.24))), rgba(211, 114, 28, 0.24);
-  background: linear-gradient(0deg, rgba(188, 104, 26, 0.24), rgba(188, 104, 26, 0.24)), rgba(211, 114, 28, 0.24);
-  mix-blend-mode: color;
-  -webkit-filter: blur(175px);
-          filter: blur(175px);
+  
   z-index: 5;
 }
 .breadcrumb__bg-right {
@@ -2282,10 +2278,10 @@ a:hover {
   height: 833px;
   right: -693px;
   top: -450px;
-  background: rgba(211, 114, 28, 0.4);
+  /* background: rgba(211, 114, 28, 0.4);
   mix-blend-mode: multiply;
   -webkit-filter: blur(125px);
-          filter: blur(125px);
+          filter: blur(125px); */
   z-index: 5;
 }
 .breadcrumb__background {
@@ -2306,7 +2302,7 @@ a:hover {
   left: 0px;
   top: 0px;
   content: "";
-  background: rgba(9, 15, 18, 0.4);
+  /* background: rgba(9, 15, 18, 0.4); */
   mix-blend-mode: lighten;
   z-index: 2;
 }
@@ -2317,7 +2313,7 @@ a:hover {
   height: 100%;
   left: 0px;
   top: 0px;
-  background: rgba(21, 28, 32, 0.44);
+  /* background: rgba(21, 28, 32, 0.44); */
   mix-blend-mode: hard-light;
   z-index: 1;
 }
