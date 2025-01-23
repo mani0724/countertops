@@ -18103,8 +18103,8 @@ body .ui-tooltip {
   border: 2px solid rgba(8, 10, 11, 0.1);
 }
 .pricing-4__price__btn .rr-btn:hover {
-  background: #eb212b,;
-  border-color: #eb212b,;
+  background: #96191f,;
+  border-color: #96191f,;
 }
 .pricing-4__price__btn .rr-btn .btn-wrap .text-one {
   color: #080A0B;
@@ -18236,4 +18236,431 @@ body .ui-tooltip {
   .pricing-4__shape__01 {
     right: 50px;
   }
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Popup form container */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Popup form container */
+ .popup-form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+
+  max-width: 400px;
+  position: relative;
+} 
+.popup-overlay{
+  popupOverlay.style.display = "none";
+}
+.popup-overlay:target{
+  visibility: visible;
+  opacity: 1;
+}
+.website-content {
+  display: none; /* Hidden by default */
+}
+
+.website-content.visible {
+  display: block;
+}
+/* Close button */
+.popup-close {
+  position: absolute;
+  top: 3px; /* Distance from the top */
+  right: 5px; /* Distance from the right */
+  font-size: 20px;
+ 
+  border: none;
+ 
+  background: none;
+  cursor: not-allowed; 
+  /* Prevent closing without form submission */
+display: flex;
+  /* width: 1px; */
+
+  height: 30px;
+  /* line-height: 30px; */
+  text-align:right;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Form fields */
+.popup-form h2 {
+  margin: 0 0 15px;
+  font-size: 24px;
+  color: #333;
+}
+
+.popup-form label {
+  font-size: 14px;
+  margin: 10px 0 5px;
+  display: block;
+  color: #666;
+}
+
+.popup-form input,
+.popup-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.popup-form button {
+   text-align: center;
+  padding: 10px;
+   background-color: #96191f; 
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease,transform 0.2s ease-in-out;
+}
+.popup-close:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  color: #000; /* Darker text color */
+}
+.popup-close{
+  font-size: 40px;
+}
+
+.popup-form button:hover {
+  background-color: #96191f;
+}
+
+/* Content behind the popup */
+.website-content {
+  display: none; /* Hidden by default */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .popup-form {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .popup-form h2 {
+    font-size: 20px;
+  }
+
+  .popup-form button {
+    font-size: 14px;
+  }
+}
+.accordion-button.accordion-small {
+  font-size: 8px; /* Adjusts font size to 5px */
+}
+
+/* General Reset */
+
+
+.accordion-container {
+
+  width: 100%;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.accordion-container h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Accordion Styles */
+.accordion {
+  border-top: 1px solid #ddd;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+ 
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+  background: #eee;
+}
+
+.accordion-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 15px;
+  background: #fff;
+}
+
+.accordion-content p {
+  margin: 15px 0;
+  color: #555;
+  font-size: 16px;
+  text-align: left;
+}
+
+/* When active, show content */
+.accordion-content.active {
+  max-height: 200px;
+  padding: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .accordion-container h1 {
+    font-size: 20px;
+  }
+
+  .accordion-header {
+    font-size: 16px;
+  }
+
+  .accordion-content p {
+    font-size: 14px;
+  }
+}
+/* tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  max-width: 1300px;
+  margin-left: 10%;
+}
+.tabcontent{
+  max-width: 1300px;
+  margin-left: 10%;
+  margin-bottom: 2%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+/* Basic Reset */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.tab-container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tab Buttons */
+.tabs {
+  display: flex;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-button:hover {
+  background-color: #e0e0e0;
+}
+
+.tab-button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Tab Content */
+.tab-content {
+  padding: 20px;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+#accordionExample {
+  max-width: 700px;
+  width: 90%;
+  background: #fff;
+  border-radius: 8px;
+  
+  padding: 20px;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.accordion-item{
+  margin-top: 2px;
+}
+#accordionExample .accordion-item h4 {
+  font-size: 25px; /* Adjust size for the h4 tag */
+  font-weight: bold;
+  color: #333; /* Optional: Set a color */
+}
+.accordion-button {
+  font-size: 20px; /* Adjust the size as needed */
+}
+.accordion {
+  border: none; /* Removes the outer border */
+  box-shadow: none; /* Removes any shadow if present */
+}
+.w3-container {
+  margin: 0 auto; /* Centers the container horizontally */
+  margin-left: 10px; /* Adds 2px margin to the left */
+  margin-right: 2px; /* Adds 2px margin to the right */
+  text-align: center; /* Centers the content inside the container */
+  max-width: 1000px; /* Optional: Limits the width of the container */
+}
+.w3-container {
+  width: 90%; /* Set to 90% of the viewport width (or any desired percentage) */
+  max-width: 1200px; /* Optional: Restrict the maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+  text-align: center; /* Optional: Align text to center */
+}
+#accordionFlushExample {
+  width: 800px; /* Set the width */
+  margin-left: 9px; /* Add 9px margin on the left */
+  margin-right: 2px; /* Add 2px margin on the right */
+}
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
 }

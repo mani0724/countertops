@@ -257,6 +257,9 @@
                                         
                                     </li>
                                     <li>
+                                        <a href="experts.html">What experts say</a>
+                                    </li>
+                                    <li>
                                         <a href="services.html">Products</a>
                                     </li>
                                     <li><a href="contact-us.html">Contact</a></li>
@@ -334,7 +337,7 @@
         </div>
     </div>
     <!-- Breadcrumb area start  -->
-
+     
     <!-- project-details area start -->
     <section class="service-details section-space__top">
         <div class="container">
@@ -342,21 +345,22 @@
                 <div class="col-xl-8">
                     <div class="service-details__content">
                         <div class="service-details__media">
-                            <img src="assets/imgs/service-details/service-1.jpg" alt="image not found">
+                            <img src="assets/imgs/Service/installing.jpg" alt="image not found">
                         </div>
-                        <h4 class="title-animation">Installation Process</h4>
+                        <h4 class="title-animation">Installation </h4>
+                        
                         <p class="mb-45">Upgrade your home with sleek, durable countertops that blend style and functionality. From luxurious marble to modern quartz, our stunning designs elevate any interior, creating a timeless centerpiece perfect for kitchens, bathrooms, or unique spaces. Transform your interiors today!</p>
                         
                        
                         <div class="row mt-10">
                             <div class="col-lg-6">
                                 <div class="service-details__media">
-                                    <img src="assets/imgs/service-details/service-2.jpg" alt="image not found">
+                                    <img src="assets/imgs/Service/installing2.jpg" alt="image not found">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="service-details__media">
-                                    <img src="assets/imgs/service-details/service-3.jpg" alt="image not found">
+                                    <img src="assets/imgs/Service/intalling1.jpg" alt="image not found">
                                 </div>
                             </div>
                         </div>
@@ -382,10 +386,11 @@
                             </div>
                             <div class="col-lg-5">
                                 <div class="service-details__media">
-                                    <img src="assets/imgs/service-details/service-4.jpg" alt="image not found">
+                                    <img src="assets/imgs/Service/installing3.jpg" alt="image not found">
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="col-xl-4">
@@ -441,10 +446,20 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </section>
+    
+    
+     
+  
+      
+      <!-- Tab content -->
+     
+   
+   
     <!-- project-details  area end -->
 
     <!-- brand area start -->
@@ -635,6 +650,51 @@
         </div>
     </section>
 </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+  accordionHeaders.forEach((header) => {
+    header.addEventListener("click", () => {
+      const content = document.getElementById(header.getAttribute("data-target"));
+      const icon = header.querySelector(".accordion-icon");
+
+      // Toggle active class
+      content.classList.toggle("active");
+
+      // Change max-height for smooth transition
+      if (content.classList.contains("active")) {
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.textContent = "-";
+      } else {
+        content.style.maxHeight = null;
+        icon.textContent = "+";
+      }
+    });
+  });
+});
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+</script>
 <!-- Footer-2 area end -->
     
 <!-- JS here -->
