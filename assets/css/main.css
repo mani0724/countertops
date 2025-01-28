@@ -5864,7 +5864,7 @@ body .ui-tooltip {
   height: 12px;
 }
 .header-1 .header__hamburger .bar-icon span {
-  background-color: #D9D9D9;
+  background-color: #02dbc9;
   height: 2px;
 }
 
@@ -7331,25 +7331,28 @@ body .ui-tooltip {
 }
 
 .banner-2__item {
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 610px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  position: relative;
+  width: 100vw; 
+  height: auto; 
+  min-height: 300px; 
+  background-size: contain; 
+  background-position: center center; 
+  background-repeat: no-repeat; 
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .banner-2__item {
     padding-top: 80px;
     padding-bottom: 80px;
+    height: auto; /* Let height adjust automatically */
+    min-height: 250px; /* Reduce min height for smaller screens */
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .banner-2__item {
     padding-top: 70px;
     padding-bottom: 100px;
+    height: auto;
+    min-height: 200px; /* Reduce min height further for mobile */
   }
 }
 .banner-2__item::before {
@@ -7372,7 +7375,7 @@ body .ui-tooltip {
   max-width: 671px;
 }
 .banner-2__content-subtitle {
-  color: #000000;
+  color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7411,31 +7414,48 @@ body .ui-tooltip {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .banner-2__content-title {
-    font-size: 44px;
-    line-height: 50px;
+    font-size: 15px;
+    display: none
+
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .banner-2__content-title {
-    font-size: 38px;
-    line-height: 50px;
+    font-size: 15px;
+    display: none
   }
 }
 @media (max-width: 575px) {
   .banner-2__content-title {
-    font-size: 32px;
-    line-height: 44px;
+    font-size: 15px;
+    display: none
   }
 }
 .banner-2__content .description {
   font-size: 18px;
   line-height: 28px;
   margin-bottom: 50px;
-  color:#000000;
+  color:#ffffff;
   max-width: 575px;
   opacity: 0;
   -webkit-transform: translateY(-110px);
           transform: translateY(-110px);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .banner-2__content .description {
+    display: none;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .banner-2__content .description {
+    display: none;
+  }
+}
+@media (max-width: 575px) {
+  .banner-2__content-title {
+    display: none;
+  }
 }
 .banner-2__btn-box {
   display: -webkit-box;
@@ -13811,7 +13831,7 @@ body .ui-tooltip {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(8, 10, 11, 0.7);
+
 }
 .recent-project__media img {
   width: 100%;
@@ -14028,7 +14048,7 @@ body .ui-tooltip {
   content: "";
   width: 100%;
   height: 0;
-  background-color: rgba(8, 10, 11, 0.7);
+
   position: absolute;
   top: 0;
   left: 0;
@@ -18780,7 +18800,60 @@ body {
   }
 }
 
+/* Default styles for .banner-2__item */
+.banner-2__item {
+  width: 100%; /* Full width */
+  height: 610px; /* Default height for desktop */
+  background-size: cover; /* Scale image to cover the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Avoid tiling */
+  background-color: #000; /* Fallback color in case the image fails to load */
+}
 
+
+
+
+
+
+
+
+
+
+
+
+
+.banner-2__item {
+  width: 100vw; 
+  height: 610px; 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000; 
+}
+
+/* Adjust for tablet view */
+@media (max-width: 1024px) {
+  .banner-2__item {
+    height: 80vh; /* Adjust height for tablets */
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .banner-2__item {
+    width: 100% !important; /* Full width */
+    height: 30vh !important; /* Full viewport height */
+    background-size: cover !important; /* Ensure it covers the entire screen */
+    background-position: center center !important; /* Proper alignment */
+    background-repeat: no-repeat !important;
+  }
+} */
+
+.banner-2__item {
+  background-size: 100% auto; 
+}
 
 
 
