@@ -9840,6 +9840,7 @@ body .ui-tooltip {
 .sidebar__widget.widget__contact .sidebar__widget-contact__thumb img {
   width: 100%;
   height: 100%;
+margin-bottom: 5%;
   -o-object-fit: cover;
      object-fit: cover;
   opacity: 0.2;
