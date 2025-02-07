@@ -1744,7 +1744,7 @@ At Countertops Gallery, we’re committed to providing high-performance, stylish
                         </div>
                         <div class="team-member__content">
                             <div class="team-member__content-text">
-                                <h6><a href="tema-details.html">Miss Soumya</a></h6>
+                                <h6><a href="tema-details.html">Miss Soumya                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </a></h6>
                                 <span>Sales & Marketing  Head</span>
                             </div>
                         </div>
@@ -1755,7 +1755,7 @@ At Countertops Gallery, we’re committed to providing high-performance, stylish
                         <div class="team-member__media wow clip-a-z">
                             <img src="assets/imgs/team-member/client3.jpg" alt="image not found">
 
-                            <ul class="team-member__socail-media">
+                            <ul class="team-member__socail-media"> 
                                 <li>
                                     <a href="#">
                                         <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="../../www.w3.org/2000/svg.html">
@@ -2288,119 +2288,61 @@ At Countertops Gallery, we’re committed to providing high-performance, stylish
 <!-- JS here -->
  
  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-  const popupOverlay = document.getElementById("popupOverlay");
-  const closePopup = document.getElementById("closePopup");
-  const websiteContent = document.getElementById("websiteContent");
-  const contactForm = document.getElementById("contactForm");
-
-  function isFormValid() {
-    const inputs = contactForm.querySelectorAll("input, textarea");
-    for (let input of inputs) {
-      if (!input.value.trim()) {
-        return false; // If any field is empty, return false
-      }
-    }
-    return true; // All fields are filled
-  }
-
-  // Form submission handler
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent page reload
-    alert("Form submitted successfully!");
-    contactForm.reset(); // Clear the form
-
-    // Hide popup and show website content
-    popupOverlay.style.display = "none";
-    websiteContent.style.display = "block";
-
-    // Re-enable scrolling
-    document.body.style.overflow = "auto";
-  });
-
-  // Close popup functionality
-  closePopup.addEventListener("click", (e) => {
-    e.preventDefault(); // Prevent any default action
-    if (isFormValid()) {
-      // Hide popup only if the form is valid
-      popupOverlay.style.display = "none";
-      websiteContent.style.display = "block"; // Show website content
-      document.body.style.overflow = "auto"; // Re-enable scrolling
-    } else {
-      alert("Please fill out all required fields before closing the form.");
-    }
-  });
-});
-
 document.addEventListener("DOMContentLoaded", () => {
-  const accordionHeaders = document.querySelectorAll(".accordion-header");
+    const popupOverlay = document.getElementById("popupOverlay");
+    const closePopup = document.getElementById("closePopup");
+    const contactForm = document.getElementById("contactForm");
 
-  accordionHeaders.forEach((header) => {
-    header.addEventListener("click", () => {
-      const content = document.getElementById(header.getAttribute("data-target"));
-      const icon = header.querySelector(".accordion-icon");
+    // Check if the user has already submitted the form
+    if (localStorage.getItem("formSubmitted") === "true") {
+        popupOverlay.style.display = "none"; // Hide the popup
+    } else {
+        popupOverlay.style.display = "block"; // Show the popup
+        document.body.style.overflow = "hidden"; // Disable scrolling
+    }
 
-      // Toggle active class
-      content.classList.toggle("active");
+    function isFormValid() {
+        const inputs = contactForm.querySelectorAll("input, textarea");
+        for (let input of inputs) {
+            if (!input.value.trim()) {
+                return false; // If any field is empty, return false
+            }
+        }
+        return true; // All fields are filled
+    }
 
-      // Change max-height for smooth transition
-      if (content.classList.contains("active")) {
-        content.style.maxHeight = content.scrollHeight + "px";
-        icon.textContent = "-";
-      } else {
-        content.style.maxHeight = null;
-        icon.textContent = "+";
-      }
+    // Handle form submission
+    contactForm.addEventListener("submit", (e) => {
+        e.preventDefault(); // Prevent page reload
+        if (isFormValid()) {
+            alert("Form submitted successfully!");
+            contactForm.reset(); // Clear the form
+
+            // Store in localStorage that form has been submitted
+            localStorage.setItem("formSubmitted", "true");
+
+            // Hide popup after submission
+            popupOverlay.style.display = "none";
+            document.body.style.overflow = "auto"; // Re-enable scrolling
+        } else {
+            alert("Please fill out all fields before submitting.");
+        }
     });
-  });
-});
-// JavaScript to handle tab switching
-document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-        const tabContainer = button.closest('.tab-container');
-        const tabContent = tabContainer.querySelector('.tab-content');
-        const tabId = button.getAttribute('data-tab');
 
-        // Remove active class from all buttons and panels
-        tabContainer.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-        tabContainer.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
-
-        // Add active class to the clicked button and its panel
-        button.classList.add('active');
-        tabContent.querySelector(`#${tabId}`).classList.add('active');
+    // Prevent popup closing unless the form is filled
+    closePopup.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (isFormValid()) {
+            popupOverlay.style.display = "none";
+            document.body.style.overflow = "auto";
+        } else {
+            alert("Please fill out all required fields before closing the form.");
+        }
     });
 });
-// JavaScript to toggle the sidebar menu
-document.getElementById('menu-toggle').addEventListener('click', function() {
-    document.getElementById('sidebar').style.right = '0';  // Slide in sidebar
-});
 
-document.getElementById('sidebar-close').addEventListener('click', function() {
-    document.getElementById('sidebar').style.right = '-250px';  // Slide out sidebar
-});
-
-// Dynamically set the background image for elements with the data-background attribute
-// JavaScript to toggle the off-canvas menu
-
-
-
-
-    //  const popupOverlay = document.getElementById('popupOverlay');
-    // const closePopup = document.getElementById('closePopup');
-    // const websiteContent = document.getElementById('websiteContent');
-
-    // // Handle form submission
-    // const contactForm = document.getElementById('contactForm');
-    // contactForm.addEventListener('submit', (e) => {
-    //   e.preventDefault(); // Prevent page reload
-    //   alert('Form submitted successfully!');
-    //   contactForm.reset(); // Clear the form
-    //   popupOverlay.style.display = 'none';
-    //   websiteContent.style.display = 'block';
-    //   document.body.style.overflow = 'auto'; // Re-enable scrolling
-    //   closePopup.disabled = false; // Allow closing
-    // });
   </script> 
+
 <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
 <script src="assets/js/plugins/waypoints.min.js"></script>
 <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
@@ -2428,5 +2370,4 @@ document.getElementById('sidebar-close').addEventListener('click', function() {
 </body>
 
 
-<!-- Mirrored from html.rrdevs.net/artima/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Dec 2024 12:11:16 GMT -->
 </html>

@@ -1173,3 +1173,36 @@
     
 
 })(jQuery);
+async function getUserIP() {
+    try {
+        const response = await fetch('https://api64.ipify.org?format=json');
+        const data = await response.json();
+        return data.ip; // Returns the user's public IP
+    } catch (error) {
+        console.error("Failed to get IP:", error);
+        return null;
+    }
+}
+
+async function contactForm() {
+    const userIP = await getUserIP();
+    
+    if (!userIP) {
+        alert("Unable to get your IP. Please try again.");
+        return;
+    }
+      // Check if this IP has already submitted
+      if (localStorage.getItem("submittedIP") === userIP) {
+        alert("Access Denied: You have already submitted the form.");
+        return;
+    }
+
+    // Simulate form submission (you can replace this with actual form submission)
+    alert("Form submitted successfully!");
+
+    // Store the submitted IP in localStorage
+    localStorage.setItem("submittedIP", userIP);
+}
+
+// Call submitForm() when the user submits the form
+document.getElementById("submit").addEventListener("click", submitForm);
