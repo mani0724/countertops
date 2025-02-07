@@ -4,10 +4,10 @@
     var windowOn = $(window);
 
     /*-----------------------------------------------------------------------------------
-        Template Name: Artima – Modern Architecture & Interior HTML5 Template
+        Template Name: Best countertops in bangalore
         Author: RRDevs
         Support: https://support.rrdevs.net
-        Description: Artima – Modern Architecture & Interior HTML5 Template.
+        Description: Best countertops in bangalore.
         Version: 1.0
         Developer Github: Rana Ahmmed (https://github.com/mdranaahmed-dev)
     -----------------------------------------------------------------------------------
