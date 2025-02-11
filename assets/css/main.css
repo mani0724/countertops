@@ -18299,7 +18299,7 @@ margin-bottom: 5%;
   position: relative;
 } 
 .popup-overlay{
-  popupOverlay.style.display = "none";
+  display: "none";
 }
 .popup-overlay:target{
   visibility: visible;
